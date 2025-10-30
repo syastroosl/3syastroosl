@@ -35,7 +35,7 @@
         transition: background-color 0.4s, color 0.4s;
       }
 
-      /* Lapisan gelap/transparan di atas gambar agar teks tetap terbaca */
+      /* Lapisan transparan agar teks tetap terbaca */
       body::before {
         content: "";
         position: absolute;
@@ -99,11 +99,16 @@
       .sosmed a img {
         width: 32px;
         height: 32px;
-        transition: transform 0.3s;
+        transition: transform 0.3s, filter 0.4s;
       }
 
       .sosmed a img:hover {
         transform: scale(1.2);
+      }
+
+      /* Khusus TikTok: ubah jadi putih di mode gelap */
+      body.dark-mode .sosmed a img.tiktok {
+        filter: invert(1) brightness(2);
       }
     </style>
   </head>
@@ -137,6 +142,7 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png"
             alt="TikTok"
+            class="tiktok"
           />
         </a>
         <a href="https://wa.me/62164307053" target="_blank">
