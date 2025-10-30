@@ -1,19 +1,63 @@
-<!-- Tempat munculnya kotak komentar -->
-      <div id="commentSection" class="hidden">
-        <h3>Tinggalkan Komentar</h3>
-        <textarea id="commentInput" placeholder="Tulis sesuatu di sini..."></textarea><br>
-        <button id="sendComment">Kirim</button>
-        <div id="commentList"></div>
-      </div>
-    </div>
 <!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.3syastroosl</title>
-    <!-- Perbaikan: 'herf' → 'href' -->
+    <title>3Syastroosl</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .kartu-profil {
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 300px;
+      }
+      .kartu-profil img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+      .tombol-link, button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 5px;
+        display: inline-block;
+      }
+      .tombol-link:hover, button:hover {
+        background-color: #555;
+      }
+      .sosmed {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .sosmed a img {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.3s;
+      }
+      .sosmed a img:hover {
+        transform: scale(1.2);
+      }
+    </style>
   </head>
   <body>
     <div class="kartu-profil">
@@ -23,10 +67,25 @@
         Saya hanya Random people yang suka code.<br>
         Selamat datang di website testing Saya!
       </p>
-      <a href="https://tiktok.com/@rennxrnnty" target="_blank" class="tombol-link">Kunjungi TikTok Saya</a>
-      <button id="sapaButton">Click untuk lihat!</button>
-    </div>
 
+      <a href="https://tiktok.com/@rennxrnnty" target="_blank" class="tombol-link">
+        Kunjungi TikTok Saya
+      </a>
+      <button id="sapaButton">Click untuk lihat!</button>
+
+      <!-- Bagian Sosial Media -->
+      <div class="sosmed">
+        <a href="https://www.youtube.com/@namaChannelAnda" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+        </a>
+        <a href="https://tiktok.com/@rennxrnnty" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
+        </a>
+        <a href="https://wa.me/62164307053" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
