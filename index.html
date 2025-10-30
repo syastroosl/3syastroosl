@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3Syastroosl</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
       :root {
-        --bg-color: #f2f2f2;
+        --bg-overlay: rgba(255, 255, 255, 0.4);
         --card-color: #ffffff;
         --text-color: #000000;
         --button-bg: #333333;
@@ -15,7 +15,7 @@
       }
 
       body.dark-mode {
-        --bg-color: #121212;
+        --bg-overlay: rgba(0, 0, 0, 0.5);
         --card-color: #1e1e1e;
         --text-color: #f0f0f0;
         --button-bg: #444444;
@@ -24,22 +24,39 @@
 
       body {
         font-family: Arial, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
+        background: url("9fbd0218-86ca-42af-b892-e72b8a52ccd7.png") no-repeat
+          center center/cover;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        color: var(--text-color);
+        position: relative;
         transition: background-color 0.4s, color 0.4s;
+      }
+
+      /* Lapisan gelap/transparan di atas gambar agar teks tetap terbaca */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-overlay);
+        backdrop-filter: blur(3px);
+        z-index: 0;
       }
 
       .kartu-profil {
         background-color: var(--card-color);
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         text-align: center;
         width: 300px;
+        position: relative;
+        z-index: 1;
         transition: background-color 0.4s, color 0.4s;
       }
 
@@ -51,7 +68,9 @@
         margin-bottom: 10px;
       }
 
-      .tombol-link, button, #modeToggle {
+      .tombol-link,
+      button,
+      #modeToggle {
         background-color: var(--button-bg);
         color: white;
         border: none;
@@ -64,7 +83,9 @@
         transition: background-color 0.3s;
       }
 
-      .tombol-link:hover, button:hover, #modeToggle:hover {
+      .tombol-link:hover,
+      button:hover,
+      #modeToggle:hover {
         background-color: var(--button-hover);
       }
 
@@ -89,46 +110,58 @@
   <body>
     <div class="kartu-profil">
       <button id="modeToggle">🌙 Mode Gelap</button>
-      <img src="ler.jpg" alt="Foto Profil Narendra RFi">
+      <img src="ler.jpg" alt="Foto Profil Narendra RFi" />
       <h1>3Syastroosl</h1>
       <p>
-        Saya hanya Random people yang suka code.<br>
+        Saya hanya Random people yang suka code.<br />
         Selamat datang di website testing Saya!
       </p>
 
-      <a href="https://tiktok.com/@rennxrnnty" target="_blank" class="tombol-link">
+      <a
+        href="https://tiktok.com/@rennxrnnty"
+        target="_blank"
+        class="tombol-link"
+      >
         Kunjungi TikTok Saya
       </a>
       <button id="sapaButton">Click untuk lihat!</button>
 
-      <!-- Bagian Sosial Media -->
       <div class="sosmed">
         <a href="https://www.youtube.com/@namaChannelAnda" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+            alt="YouTube"
+          />
         </a>
         <a href="https://tiktok.com/@rennxrnnty" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png"
+            alt="TikTok"
+          />
         </a>
         <a href="https://wa.me/62164307053" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+            alt="WhatsApp"
+          />
         </a>
       </div>
     </div>
 
     <script>
       // Tombol sapaan
-      document.getElementById('sapaButton').addEventListener('click', () => {
-        alert('Halo, selamat datang di situs saya!');
+      document.getElementById("sapaButton").addEventListener("click", () => {
+        alert("Halo, selamat datang di situs saya!");
       });
 
       // Mode Gelap / Terang
-      const toggleButton = document.getElementById('modeToggle');
-      toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-          toggleButton.textContent = '☀️ Mode Terang';
+      const toggleButton = document.getElementById("modeToggle");
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggleButton.textContent = "☀️ Mode Terang";
         } else {
-          toggleButton.textContent = '🌙 Mode Gelap';
+          toggleButton.textContent = "🌙 Mode Gelap";
         }
       });
     </script>
