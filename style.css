@@ -1,27 +1,25 @@
-
-/* Styling tambahan untuk link dan tombol biar lebih keren */
 .kartu-profil a, .kartu-profil button {
-    display: block; /* Bikin link dan tombol punya baris sendiri */
+    display: block;
     margin: 10px auto;
     padding: 8px 15px;
     border-radius: 8px;
-    text-decoration: none; /* Hilangin garis bawah di link */
+    text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s; /* Efek halus saat hover */
+    transition: background-color 0.3s;
 }
 
 .kartu-profil a {
-    background-color: #1DA1F2; /* Warna biru biar kayak Twitter/TikTok */
+    background-color: #1DA1F2;
     color: white;
 }
 
 .kartu-profil button {
-    background-color: #4CAF50; /* Warna hijau biar kayak tombol OK */
+    background-color: #4CAF50;
     color: white;
     border: none;
 }
 
 .kartu-profil a:hover, .kartu-profil button:hover {
-    background-color: #1a8cd8; /* Warna agak gelap saat di-hover */
+    background-color: #1a8cd8;
 }
