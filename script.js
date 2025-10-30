@@ -1,7 +1,8 @@
+// 1. Pilih tombol berdasarkan ID-nya
 const tombolSapa = document.getElementById('sapaButton');
 
+// 2. Tambahkan 'event listener' untuk aksi 'click'
 tombolSapa.addEventListener('click', function() {
-  const pesan = document.createElement('p');
-  pesan.textContent = 'Halo! Terima kasih sudah berkunjung!';
-  document.body.appendChild(pesan);
+  // 3. Jalankan kode ini ketika tombol di-klik
+  alert('Halo! Terima kasih sudah berkunjung!');
 });
