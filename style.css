@@ -1,5 +1,5 @@
 body {
-  background-color: #2c3034;
+  background: url("download (2).jpeg") no-repeat center center/cover;
   font-family: 'Poppins', Arial, sans-serif;
   color: #e2cefa;
   display: flex;
@@ -7,22 +7,52 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Lapisan kabut lembut agar teks dan kartu lebih jelas */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 0;
 }
 
 /* Kartu profil */
 .kartu-profil {
   width: 320px;
-  background: #3a3f44;
+  background: rgba(58, 63, 68, 0.85);
   border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   padding: 30px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1.2s ease both;
+}
+
+/* Efek muncul lembut dari bawah */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .kartu-profil:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
 
 /* Foto profil */
@@ -39,14 +69,14 @@ body {
 .kartu-profil h1 {
   margin: 10px 0 5px;
   font-size: 24px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .kartu-profil p {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 20px;
-  color: #ccc;
+  color: #d5d5d5;
 }
 
 /* Tombol dan link */
@@ -61,7 +91,7 @@ button {
   border-radius: 25px;
   border: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.3s ease;
   cursor: pointer;
 }
 
