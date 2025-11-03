@@ -24,8 +24,7 @@
 
       body {
         font-family: Arial, sans-serif;
-        background: url("9fbd0218-86ca-42af-b892-e72b8a52ccd7.png") no-repeat
-          center center/cover;
+        background: url("download (1).jpeg") no-repeat center center/cover;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,7 +34,6 @@
         transition: background-color 0.4s, color 0.4s;
       }
 
-      /* Lapisan transparan agar teks tetap terbaca */
       body::before {
         content: "";
         position: absolute;
@@ -106,7 +104,6 @@
         transform: scale(1.2);
       }
 
-      /* Khusus TikTok: ubah jadi putih di mode gelap */
       body.dark-mode .sosmed a img.tiktok {
         filter: invert(1) brightness(2);
       }
@@ -129,6 +126,8 @@
       >
         Kunjungi TikTok Saya
       </a>
+
+      <!-- Tombol yang diarahkan ke web lain -->
       <button id="sapaButton">Click untuk lihat!</button>
 
       <div class="sosmed">
@@ -155,9 +154,9 @@
     </div>
 
     <script>
-      // Tombol sapaan
+      // Tombol untuk membuka web lain
       document.getElementById("sapaButton").addEventListener("click", () => {
-        alert("Halo, selamat datang di situs saya!");
+        window.open("https://example.com", "_blank");
       });
 
       // Mode Gelap / Terang
